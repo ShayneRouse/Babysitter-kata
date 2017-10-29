@@ -2,11 +2,13 @@ package babysitter;
 
 public class Babysitter {
 	
-	CalculatePay calcPay = new CalculatePay();
+	
 	
 	private int startTime;
 	private int endTime;
 	private int bedTime;
+	
+	public Babysitter () {}
 	
 	public void setStartTime(int startTime) {
 		
@@ -38,9 +40,18 @@ public class Babysitter {
 		return bedTime;
 	}
 	
+	public int hoursTo24Clock(int hoursTo24Clock) {
+		
+		if(hoursTo24Clock >= 0 && hoursTo24Clock <=4) {
+			
+			hoursTo24Clock += 24;
+		}
+		    return hoursTo24Clock;
+	}
+	
 	public int getHoursFromStartTimeToBedTime() {
 		
-		return calcPay.hoursTo24Clock(getBedTime()) - getStartTime();
+		return hoursTo24Clock(getBedTime()) - getStartTime();
 	}
 	
 	public int getHoursFromBedtimeToMidnight() {
@@ -50,10 +61,22 @@ public class Babysitter {
 	
 	public int getHoursFromBedTimeToEndTime() {
 		
-		return calcPay.hoursTo24Clock(getEndTime()) - calcPay.hoursTo24Clock(getBedTime());
+		return hoursTo24Clock(getEndTime()) - hoursTo24Clock(getBedTime());
 	}
 	
-	
-	
+    public int payAmount( ) {
+    	
+        return (getHoursFromStartTimeToBedTime()*12) + 
+       		(getHoursFromBedtimeToMidnight()*8) + 
+       		(getHoursFromBedTimeToEndTime()*16);
+       
+       
+   }
+		
 
 }
+
+
+
+
+

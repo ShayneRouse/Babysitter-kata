@@ -8,7 +8,7 @@ public class BabysitterApplication {
 		
 		Scanner scan = new Scanner(System.in);
 		Babysitter sitter = new Babysitter();
-		CalculatePay CalcPay = new CalculatePay();
+		
 		
 		
 		System.out.println("Enter your start time: ");
@@ -36,14 +36,14 @@ public class BabysitterApplication {
 	    
 	    System.out.println("Your shift ended at " + sitter.getEndTime());
 	    
-	
+
 		System.out.println("Enter time child went to bed: ");
 		
 		sitter.setBedTime(scan.nextInt());
 		
 	    System.out.println("Child went to bed at " + sitter.getBedTime());
 	    
-	    
+	    System.out.println("You earned: $" + sitter.payAmount());
 	
 	}
 
