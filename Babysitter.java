@@ -43,6 +43,16 @@ public class Babysitter {
 		return calcPay.hoursTo24Clock(getBedTime()) - getStartTime();
 	}
 	
+	public int getHoursFromBedtimeToMidnight() {
+		
+		 return 24 - getBedTime();
+	}
+	
+	public int getHoursFromBedTimeToEndTime() {
+		
+		return calcPay.hoursTo24Clock(getEndTime()) - calcPay.hoursTo24Clock(getBedTime());
+	}
+	
 	
 	
 
