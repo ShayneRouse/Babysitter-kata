@@ -22,5 +22,6 @@ class BabysitterTest {
 	public void shouldReturnBedTime() {
 		assertEquals(10, testSitter.getBedTime());
 	}
+    
 
 }
