@@ -19,9 +19,27 @@ public class BabysitterApplication {
 	    	sitter.setStartTime(scan.nextInt());
 	    }
 	    
-	    System.out.println(sitter.getStartTime());
+	    System.out.println("Your shift started at " + sitter.getStartTime());
+	    
 	
+		System.out.println("Enter time your shift finished: ");
+		
+		sitter.setEndTime(scan.nextInt());
+		
+	    while(sitter.getEndTime()>4 && sitter.getEndTime()<17) {
+	    	
+	    	System.out.println("Shift can't go past 4:00/4:00am");
+	    	sitter.setEndTime(scan.nextInt());
+	    }
+	    
+	    System.out.println("Your shift ended at " + sitter.getEndTime());
+	    
 	
+		System.out.println("Enter time child went to bed: ");
+		
+		sitter.setBedTime(scan.nextInt());
+		
+	    System.out.println("Child went to bed at " + sitter.getEndTime());
 	
 	
 	}
